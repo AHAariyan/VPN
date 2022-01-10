@@ -74,6 +74,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, Chan
         updateCurrentServerIcon(server.getFlagUrl());
 
         connection = new CheckInternetConnection();
+
+        if (vpnStart) {
+            confirmDisconnect();
+        }else {
+            prepareVpn();
+        }
     }
 
     @Override
