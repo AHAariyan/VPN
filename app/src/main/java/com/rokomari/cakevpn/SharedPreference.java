@@ -46,7 +46,7 @@ public class SharedPreference {
      */
     public Server getServer() {
         Server server = new Server(
-                mPreference.getString(SERVER_COUNTRY,"Pathshala Test"),
+                mPreference.getString(SERVER_COUNTRY,"Pathshala"),
                 mPreference.getString(SERVER_FLAG,getImgURL(R.drawable.pathshala)),
                 mPreference.getString(SERVER_OVPN,"pathshalatest.ovpn"),
                 mPreference.getString(SERVER_OVPN_USER,"vpn"),

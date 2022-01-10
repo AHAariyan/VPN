@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize">
 
-    <TextView
-        android:id="@+id/titleTv"
-        android:layout_width="wrap_content"
+<com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/appBarTop"
+    android:background="@color/purple_500"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:id="@+id/toolbar"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
 
-    <ImageButton
-        android:visibility="gone"
-        android:id="@+id/navbar_right"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/svpn__country_flag" />
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="289dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/amaranth_bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="Onnorokom-VPN"
+                android:textSize="20dp" />
 
-</androidx.appcompat.widget.Toolbar>
+            <ImageButton
+                android:visibility="gone"
+                android:id="@+id/navbar_right"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/svpn__country_flag" />
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+
+

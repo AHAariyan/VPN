@@ -25,5 +25,5 @@
         android:text="united kingdom"
         android:textStyle="normal"
         android:textAllCaps="true"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@android:color/black" />
 </LinearLayout>

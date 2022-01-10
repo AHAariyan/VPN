@@ -10,10 +10,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.rokomari.cakevpn.BroadcastReceiver.BootCompleteReceiver;
 import com.rokomari.cakevpn.R;
 import com.rokomari.cakevpn.adapter.ServerListRVAdapter;
 import com.rokomari.cakevpn.interfaces.ChangeServer;
@@ -35,9 +38,11 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
     private ChangeServer changeServer;
 
     public static final String TAG = "CakeVPN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_main);
 
         // Initialize all variable
@@ -71,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
             serverListRv.setAdapter(serverListRVAdapter);
         }
 
+        //Register a BroadcastReceiver:
+        IntentFilter intentFilter = new IntentFilter("android.permission.RECEIVE_BOOT_COMPLETED");
+        BootCompleteReceiver completeReceiver = new BootCompleteReceiver();
+        registerReceiver(completeReceiver, intentFilter);
+
     }
 
     /**
@@ -93,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
     /**
      * Close navigation drawer
      */
-    public void closeDrawer(){
+    public void closeDrawer() {
         if (drawer.isDrawerOpen(GravityCompat.END)) {
             drawer.closeDrawer(GravityCompat.END);
         } else {
@@ -108,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
 
         ArrayList<Server> servers = new ArrayList<>();
 
-        servers.add(new Server("Pathshala Test",
+        servers.add(new Server("Pathshala",
                 Utils.getImgURL(R.drawable.pathshala),
                 "pathshalatest.ovpn",
                 "vpn",
@@ -145,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
 
     /**
      * On navigation item click, close drawer and change server
+     *
      * @param index: server index
      */
     @Override
