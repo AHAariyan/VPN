@@ -262,14 +262,14 @@ public class MainFragment extends Fragment implements View.OnClickListener, Chan
                     status("connect");
                     vpnStart = false;
                     vpnService.setDefaultStatus();
-                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    //behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     binding.logTv.setText("");
                     break;
                 case "CONNECTED":
                     vpnStart = true;// it will use after restart this activity
                     status("connected");
                     binding.logTv.setText("Swipe up to see details!");
-                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    //behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     break;
                 case "WAIT":
                     binding.logTv.setText("waiting for server connection!!");

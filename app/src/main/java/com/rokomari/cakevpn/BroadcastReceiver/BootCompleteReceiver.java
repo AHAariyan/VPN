@@ -13,13 +13,13 @@ import java.net.Inet4Address;
 public class BootCompleteReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Called!", Toast.LENGTH_SHORT).show();
-
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
-            Intent i = new Intent(context, MainActivity.class);
-           // i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
-        }
+//        Toast.makeText(context, "Called!", Toast.LENGTH_SHORT).show();
+//
+//        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+//            Intent i = new Intent(context, MainActivity.class);
+//           // i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            context.startActivity(i);
+//        }
 //        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
 //            Toast.makeText(context, "2", Toast.LENGTH_SHORT).show();
 ////            Intent i = new Intent(context, MainActivity.class);
